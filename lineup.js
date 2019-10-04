@@ -1,6 +1,6 @@
-function calculateTotalSalary(lineup) {
-  return 0
-}
+let calculateTotalSalary = lineup.reduce((salary) => {
+  return salary.lineup 
+}, 0)
 
 function getPositionCounts(lineup) {
   return {}
