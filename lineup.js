@@ -4,12 +4,21 @@ function calculateTotalSalary(lineup) {
   }, 0)
 }
 
-function getPositionCounts(lineup) {
-  return lineup
-
+function getPositionCounts(player) {
+  return player.reduce((table, player) => {
+    if (!table[player.position]) {
+        table[player.position] = 0
+      
+    }
+    table[player.position] = table[player.position] + 1
+        return table
+  
+  
+  }, {})
+ 
   
 }
-
+//console.log(lineup)
 function getGameCounts(lineup) {
   return lineup.reduce((games, player) => {
     games[player.gameId] = games[player.gameId] === undefined ? 1 : games[player.gameId] + 1
